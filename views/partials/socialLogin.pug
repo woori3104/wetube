@@ -5,6 +5,10 @@
                 i.fab.fa-github 
             |Continue with Github
     button.social-login--facebook
-        span
-            i.fab.fa-facebook 
-        |Continue with Facebook
+        a(href=routes.facebook)
+            span
+                i.fab.fa-facebook 
+            |Continue with Facebook
+    button.social-login-kakao
+        a(href=routes.kakao)
+            img(src="https://developers.kakao.com/assets/img/about/logos/kakaologin/kr/kakao_account_login_btn_medium_narrow.png", alt="", srcset="")

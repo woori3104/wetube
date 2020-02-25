@@ -1,4 +1,3 @@
-/** @format */
 
 import passport from "passport";
 import routes from "../routes";
@@ -69,6 +68,33 @@ export const postGithubLogIn = (req, res) => {
   res.redirect(routes.home);
 };
 
+
+//facebook
+
+export const facebookLogin = passport.authenticate("facebook");
+
+export const facebookLoginCallback = async (accessToken, refreshToken, profile, cb) => {
+  console.log(body);
+
+};
+
+export const postFacebookLogIn = (req, res) => {
+  res.redirect(routes.home);
+};
+
+//kakao
+
+export const kakaokLogin = passport.authenticate("kakao");
+
+export const kakaoLoginCallback = async (accessToken, refreshToken, profile, cb) => {
+  console.log("---");
+};
+
+export const postkakaoLogIn = (req, res) => {
+  res.redirect(routes.home);
+};
+
+
 export const logout = (req, res) => {
   req.logout();
   res.redirect(routes.home);
@@ -84,6 +110,7 @@ export const userDetail = async(req, res) => {
     const user = await User.findById(id);
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) { 
+    console.log("fail");
     res.redirect("home");
   }
 };
