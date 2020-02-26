@@ -33,7 +33,7 @@ const FACEBOOK_CALLBACK = "/auth/facebook/callback";
 
 //KAKAO TALK
 const KAKAO = "/auth/kakao";
-const KAKAO_CALLBACK = "/oauth";
+const KAKAO_CALLBACK = "/auth/kakao/callback";
 
 const routes = {
     home: HOME,

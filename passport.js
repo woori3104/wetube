@@ -2,12 +2,13 @@
 import passport from "passport";
 import GithubStrategy from "passport-github";
 import FaceBookStrategy from "passport-facebook";
+import GoogleStrategy from "passport-google";
+import KakaoStrategy from "passport-kakao";
 import User from "./models/User";
 import routes from "./routes";
 import { githubLoginCallback, kakaoLoginCallback, facebookLoginCallback } from "./controller/userController";
 
-var kakaopassport = require('passport'),
-  KakaoStrategy = require('passport-kakao').Strategy;
+
 passport.use(User.createStrategy());
 passport.use(
   new GithubStrategy(
@@ -25,22 +26,26 @@ passport.use(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SECRET,
-      callbackURL: `http://localhost:4000${routes.facebookCallback}`
+      callbackURL: `https://b49e3c11.ngrok.io${routes.facebookCallback}`,
+      profileFields: ["id", "displayName", "photos", "email"],
+      scope:['public_profile','email']
     },
     facebookLoginCallback
   )
 );
 
-kakaopassport.use(
-  new KakaoStrategy (
+passport.use(
+  new KakaoStrategy(
     {
       clientID: process.env.KAKAO_ID,
       clientSecret: process.env.KAKAO_SECRET,
-      callbackURL: `http://localhost:4000${routes.kakaoCallback}`
+      callbackURL: `https://b49e3c11.ngrok.io${routes.kakaoCallback}`,
+      
     },
     kakaoLoginCallback
   )
 );
+
 
 
 passport.serializeUser(User.serializeUser());
