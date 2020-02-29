@@ -2,9 +2,16 @@ const recorderContainer = document.getElementById("jsRecordContainer");
 const recorderBtn = document.getElementById("JsRecordBtn");
 const videoPreview = document.getElementById("jsVideoPreview");
 
+
 let streamObject;
 let videoRecorder;
 
+
+const registerView = () => { 
+    const videoID = window.location.heref.split("/videos/")[1];
+
+    fetch(`api/${videoID}/view`, { method: "POST" });
+}
 
 const handleVideoData = event => {
     console.log(event);
