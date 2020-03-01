@@ -1,5 +1,8 @@
 extends layouts/main
 include mixins/videoPlayer
+include mixins/commnetBlock
+
+
 
 block content
     .video-detail__container
@@ -20,19 +23,26 @@ block content
             else 
                 span.video__views #{video.views} views
         .video__comments
-            if video.comments.length === 1
+            if comments.length === 1
                 span.video__comment-number
                     span#jsCommentNumber 1 
                     |   comment
             else
                 span.video__comment-number 
-                    span#jsCommentNumber=video.comments.length 
+                    span#jsCommentNumber=comments.length 
                     |   comments
-            form.add_comment#jsAddComment
-                input(type="text", placeholder = "Add a comment", name="comment")
+            if loggedUser.id 
+                form.add_comment#jsAddComment
+                    input(type="text", placeholder = "Add a comment", name="comment")
             ul.video__commnets-list#jsCommentList
-                each comment in video.comments.reverse()
-                    li
-                        span=comment.text
+                each comment in comments
+                    +commentBlock({
+                        username: comment.creator.name,
+                        timestamp: comment.createdAt,
+                        content: comment.comment,
+                        authorId: comment.creator._id,
+                        authorAvatar: comment.creator.avatarUrl,
+                        commentId: comment._id
+                    })
 
         

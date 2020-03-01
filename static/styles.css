@@ -587,18 +587,40 @@ input[type="submit"] {
     .video-detail__container .video__comments .video__commnets-list {
       margin-top: 50px; }
       .video-detail__container .video__comments .video__commnets-list li {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(101, 101, 114, 0.6)), to(rgba(0, 0, 0, 0.6)));
-        background: -webkit-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-        background: -moz-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-        background: -o-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-        background: linear-gradient(to bottom, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-        color: white;
-        padding: 10px;
-        -webkit-border-radius: 15px;
-           -moz-border-radius: 15px;
-                border-radius: 15px; }
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+           -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
         .video-detail__container .video__comments .video__commnets-list li:not(:last-child) {
           margin-bottom: 15px; }
+        .video-detail__container .video__comments .video__commnets-list li span {
+          width: 100%;
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(101, 101, 114, 0.6)), to(rgba(0, 0, 0, 0.6)));
+          background: -webkit-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+          background: -moz-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+          background: -o-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+          background: linear-gradient(to bottom, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+          color: white;
+          -webkit-border-radius: 15px;
+             -moz-border-radius: 15px;
+                  border-radius: 15px;
+          text-align: center;
+          padding: 10px; }
+        .video-detail__container .video__comments .video__commnets-list li button {
+          background: transparent;
+          padding: 10px;
+          width: 20%;
+          -webkit-border-radius: 15px;
+             -moz-border-radius: 15px;
+                  border-radius: 15px;
+          text-align: center;
+          padding: 10px; }
 
 .user-profile {
   width: 100%;

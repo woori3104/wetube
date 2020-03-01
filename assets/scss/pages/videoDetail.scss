@@ -50,16 +50,31 @@
     .video__commnets-list {
       margin-top: 50px;
       li {
-        background: linear-gradient(
-          to bottom,
-          rgba(101, 101, 114, 0.6) 100%,
-          rgba(0, 0, 0, 0.6)
-        );
-        color: white;
-        padding: 10px;
-        border-radius: 15px;
+        
+        display: flex;
+        justify-content: space-between;
         &:not(:last-child) {
           margin-bottom: 15px;
+        }
+        span {
+          width: 100%;
+          background: linear-gradient(
+            to bottom,
+            rgba(101, 101, 114, 0.6) 100%,
+            rgba(0, 0, 0, 0.6)
+          );
+          color: white;
+          border-radius: 15px;
+          text-align: center;
+          padding: 10px;
+        }
+        button {
+          background:transparent;
+          padding:10px;
+          width: 20%;
+          border-radius: 15px;
+          text-align: center;
+          padding: 10px;
         }
       }
     }
