@@ -40,9 +40,9 @@ block content
                         username: comment.creator.name,
                         timestamp: comment.createdAt,
                         content: comment.comment,
-                        authorId: comment.creator._id,
+                        authorId: comment.creator.id,
                         authorAvatar: comment.creator.avatarUrl,
-                        commentId: comment._id
+                        commentId: comment.id
                     })
 
         

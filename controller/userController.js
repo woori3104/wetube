@@ -2,6 +2,7 @@
 import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
+import userRouter from "../routers/userRouter";
 
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
@@ -112,7 +113,7 @@ export const postFacebookLogIn = (req, res) => {
 export const kakaokLogin = passport.authenticate("kakao");
 
 export const kakaoLoginCallback = async (accessToken, refreshToken, profile, cb) => {
-  console.log("---");
+
 };
 
 export const postkakaoLogIn = (req, res) => {
@@ -127,15 +128,14 @@ export const logout = (req, res) => {
 
 export const getMe = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user }, );
- };
+};
 
-export const userDetail = async(req, res) => { 
+export const getUserDetail = async(req, res) => { 
   const { params: { id } } = req;
   try {
     const user = await User.findById(id);
-    res.render("userDetail", { pageTitle: "User Detail", user });
-  } catch (error) { 
-    console.log("fail");
+    res.render("userDetail", { pageTitle: user.name, user });
+  } catch (error) {
     res.redirect("home");
   }
 };
