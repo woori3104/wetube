@@ -1,12 +1,11 @@
 import express from "express";
 import routes from "../routes";
 import {
-    postRegisterView
-} from "../controller/videoController";
-import { 
+    postRegisterView,
     postAddComment,
-    deleteComment
-} from "../controller/commentController"
+    postDeleteComment
+} from "../controller/videoController";
+
 const apiRouter = express.Router();
 
 apiRouter.post(
@@ -19,9 +18,9 @@ apiRouter.post(
     postAddComment
 );
 
-apiRouter.get(
+apiRouter.post(
     routes.deleteComment,
-    deleteComment
+    postDeleteComment
 );
 
 

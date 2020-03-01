@@ -40,8 +40,8 @@ const API = "/api";
 const REGISTER_VIEW = "/:id/view";
 
 // Comments
-const ADD_COMMENT = "/video/:id/comment";
-const DELETE_COMMENT = "/comment/:id/delete";
+const ADD_COMMENT = "/:id/comment";
+const DELETE_COMMENT = "/:id/comment/delete";
 
 const routes = {
     home: HOME,

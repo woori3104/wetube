@@ -1,13 +1,11 @@
 mixin commentBlock(comment = {})
     li.comment
-        a(href=`/user/${comment.authorId}`)
-            .comment__user(style={'background-image':`url(${comment.authorAvatar})`})
         .comment__user-data
             .comment__title
                 a(href=`/users/${comment.authorId}`)
                     span.comment__username= comment.username
-            p.comment__content= comment.content
-
+            p.comment__content#jsCommentContent= comment.content
         if String(loggedUser.id) === String(comment.authorId)
-            .canDelete(data-id=comment.commentId)
-                span ❌
+            .comment__delete
+                span.comment__delete#jsDeleteComment(data-commentid=comment._id) ❌
+                

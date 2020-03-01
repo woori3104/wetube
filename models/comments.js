@@ -1,21 +1,17 @@
 import mongoose from "mongoose";
 
 const CommentSchema = new mongoose.Schema({
-    video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Videos"
-    },
-    creator: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
     comment: {
         type: String,
-        required: "comment is required"
+        required: "Text is required"
     },
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 });
 
