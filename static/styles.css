@@ -569,58 +569,66 @@ input[type="submit"] {
       font-size: 16px;
       font-weight: 400; }
   .video-detail__container .video__comments {
-    margin-top: 25px; }
+    margin-top: 25px;
+    padding-bottom: 20px; }
     .video-detail__container .video__comments .video__comment-number {
       font-size: 18px;
+      margin-left: -20px;
       margin-bottom: 15px;
       padding-bottom: 10px; }
-    .video-detail__container .video__comments .add__comment {
+  .video-detail__container .video__comments_input .add__comment {
+    margin-top: 25px;
+    padding-top: 20px;
+    width: 100%;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px; }
+    .video-detail__container .video__comments_input .add__comment input {
       margin-top: 25px;
       width: 100%;
       margin-bottom: 15px;
-      padding-bottom: 10px; }
-      .video-detail__container .video__comments .add__comment input {
-        margin-top: 25px;
-        padding-top: 10px;
-        width: 100%;
+      padding-bottom: 10px;
+      -webkit-border-radius: 15px;
+         -moz-border-radius: 15px;
+              border-radius: 15px; }
+  .video-detail__container .video__comments_input .video__commnets-list {
+    margin-top: 40px; }
+    .video-detail__container .video__comments_input .video__commnets-list li {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+         -moz-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .video-detail__container .video__comments_input .video__commnets-list li:not(:last-child) {
         margin-bottom: 15px; }
-    .video-detail__container .video__comments .video__commnets-list {
-      margin-top: 50px; }
-      .video-detail__container .video__comments .video__commnets-list li {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-           -moz-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
-        .video-detail__container .video__comments .video__commnets-list li:not(:last-child) {
-          margin-bottom: 15px; }
-        .video-detail__container .video__comments .video__commnets-list li span {
-          width: 100%;
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(101, 101, 114, 0.6)), to(rgba(0, 0, 0, 0.6)));
-          background: -webkit-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-          background: -moz-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-          background: -o-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-          background: linear-gradient(to bottom, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
-          color: white;
-          -webkit-border-radius: 15px;
-             -moz-border-radius: 15px;
-                  border-radius: 15px;
-          text-align: center;
-          padding: 10px; }
-        .video-detail__container .video__comments .video__commnets-list li button {
-          background: transparent;
-          padding: 10px;
-          width: 20%;
-          -webkit-border-radius: 15px;
-             -moz-border-radius: 15px;
-                  border-radius: 15px;
-          text-align: center;
-          padding: 10px; }
+      .video-detail__container .video__comments_input .video__commnets-list li .comment {
+        width: 100%;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(101, 101, 114, 0.6)), to(rgba(0, 0, 0, 0.6)));
+        background: -webkit-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+        background: -moz-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+        background: -o-linear-gradient(top, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+        background: linear-gradient(to bottom, rgba(101, 101, 114, 0.6) 100%, rgba(0, 0, 0, 0.6));
+        color: white;
+        -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+                border-radius: 15px;
+        text-align: center;
+        padding: 10px; }
+      .video-detail__container .video__comments_input .video__commnets-list li .video__comments-delete {
+        background: transparent;
+        padding: 10px;
+        width: 20%;
+        -webkit-border-radius: 15px;
+           -moz-border-radius: 15px;
+                border-radius: 15px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer; }
 
 .user-profile {
   width: 100%;
