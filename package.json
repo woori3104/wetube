@@ -23,7 +23,7 @@
     "author": "woori kim",
     "license": "ISC",
     "dependencies": {
-        "@babel/cli": "^7.0.0",
+        "@babel/cli": "^7.8.4",
         "@babel/core": "^7.8.4",
         "@babel/node": "^7.8.4",
         "@babel/polyfill": "^7.8.3",
