@@ -1,0 +1,11 @@
+mixin commentBlock(comment = {})
+    li.comment
+        .comment__user-data
+            .comment__title
+                a(href=`/users/${comment.authorId}`)
+                    span.comment__username= comment.username
+            p.comment__content#jsCommentContent= comment.content
+        if String(loggedUser.id) === String(comment.authorId)
+            .comment__delete
+                span.comment__delete#jsDeleteComment(data-commentid=comment._id) ❌
+                
